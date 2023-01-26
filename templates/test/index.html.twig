@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Test index{% endblock %}
+
+{% block javascripts %}
+    <script defer>
+      setTimeout(() => {
+        const testP = document.getElementById('test')
+        const testS = document.createElement('span')
+        testS.innerText = 'Coucou'
+        testP.appendChild(testS)
+      }, 2000)
+    </script>
+{% endblock %}
+
+{% block body %}
+    <h1>Test index</h1>
+
+    <p id="test"></p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for test in tests %}
+                <tr>
+                    <td>{{ test.id }}</td>
+                    <td>{{ test.name }}</td>
+                    <td>
+                        <a href="{{ path('app_test_show', {'id': test.id}) }}">show</a>
+                        <a href="{{ path('app_test_edit', {'id': test.id}) }}">edit</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="3">no records found</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_test_new') }}">Create new</a>
+{% endblock %}
