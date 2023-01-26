@@ -24,11 +24,8 @@
         <testsuite name="Unit">
             <directory suffix=".php">tests/Unit</directory>
         </testsuite>
-        <testsuite name="Functional">
-            <directory suffix=".php">tests/Functional</directory>
-        </testsuite>
-        <testsuite name="Application">
-            <directory suffix=".php">tests/Application</directory>
+        <testsuite name="Feature">
+            <directory suffix=".php">tests/Feature</directory>
         </testsuite>
     </testsuites>
 
