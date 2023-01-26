@@ -11,6 +11,7 @@ class TestFunctionalTest extends WebTestCase
 
     public function setUp(): void
     {
+        self::ensureKernelShutdown();
         $this->client = static::createClient();
     }
 

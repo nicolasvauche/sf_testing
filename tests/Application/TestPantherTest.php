@@ -11,6 +11,7 @@ class TestPantherTest extends PantherTestCase
 
     public function setUp(): void
     {
+        self::ensureKernelShutdown();
         $this->client = static::createPantherClient(['browser' => static::FIREFOX]);
     }
 
